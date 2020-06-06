@@ -22,7 +22,7 @@ const server = http.createServer(function(request, response) {
         try {
             console.log('Body: ' + body)
             response.writeHead(200, {'Content-Type': 'text/html'})
-            var posted = body.split("=")[1];
+            var posted = (body.split("=")[1]).trim();
             console.log('posted: ' + posted)
             console.log('Object.prototype.toString.call( posted ): ' + Object.prototype.toString.call( posted ) )
             
