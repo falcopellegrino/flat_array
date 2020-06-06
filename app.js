@@ -46,7 +46,7 @@ const server = http.createServer(function(request, response) {
             var strResp = `
             <html><body><div>`;
             strResp += "Original Array = " + postDecoded;
-            strResp += "<br />Flatted Array = " + flattedArray.toString();
+            strResp += "<br />Flatted Array = [" + flattedArray.toString() + "]";
             strResp += `
             </div></body></html>`;
             // response.end(decode(posted));
