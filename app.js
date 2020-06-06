@@ -91,7 +91,11 @@ function flatArray (arr1) {
     return arr1.reduce((acc, val) => Array.isArray(val) ? acc.concat(flatArray(val)) : acc.concat(val), []);
 }
 
-const port = 3001
-const host = '127.0.0.1'
-server.listen(port, host)
-console.log(`Listening at http://${host}:${port}`)
+//const port = 3001
+const port = process.env.PORT || 8080;
+
+//const host = '127.0.0.1'
+//server.listen(port, host)
+server.listen(port)
+
+//console.log(`Listening at http://${host}:${port}`)
