@@ -62,12 +62,13 @@ const server = http.createServer(function(request, response) {
 
 
       })
-    } else {
+    } else {https:
       console.log('GET')
+      //http://localhost:3001
       var html = `
               <html>
                   <body>
-                      <form method="post" action="http://localhost:3001">Paste here your multidimensional array:<br/>
+                      <form method="post" action="https//mysterious-waters-69875.herokuapp.com/">Paste here your multidimensional array:<br/>
                         e.g.: [[1,2,[3]],4]
                         <input type="text" name="name" />
                         <input type="submit" value="Submit" />
