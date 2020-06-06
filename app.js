@@ -86,6 +86,8 @@ function decode (str) {
         str = str.replace(/%2C/g, ',');
         str = str.replace(/%5D/g, ']');
         str = str.replace(/%20/g, '');
+        str = str.replace(/\+/g, '');
+        
         return str;
     }
 }
