@@ -23,7 +23,7 @@ const server = http.createServer(function(request, response) {
             console.log('Body: ' + body)
             response.writeHead(200, {'Content-Type': 'text/html'})
             var posted = (body.split("=")[1]).trim();
-            console.log('posted: ' + posted)
+            console.log('posted: ' + posted);
             console.log('Object.prototype.toString.call( posted ): ' + Object.prototype.toString.call( posted ) )
             
             
@@ -85,6 +85,7 @@ function decode (str) {
         str = str.replace(/%5B/g, '[');
         str = str.replace(/%2C/g, ',');
         str = str.replace(/%5D/g, ']');
+        str = str.replace(/%20/g, '');
         return str;
     }
 }
