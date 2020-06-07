@@ -48,7 +48,7 @@ const server = http.createServer(function(request, response) {
             strResp += "Original Array = " + postDecoded;
             strResp += "<br />Flatted Array = [" + flattedArray.toString() + "]";
             strResp += `
-            </div>
+            </div><br /><br />
             <form method="post" action="">Paste here your multidimensional array:<br/>
               e.g.: [[1,2,[3]],4]
               <input type="text" name="name" />
@@ -61,7 +61,15 @@ const server = http.createServer(function(request, response) {
         }
         catch(err) {
             console.log('err: ' + err);
-            response.end('you are trying to do something that sounds strange...');
+            //response.end('you are trying to do something that sounds strange...');
+            strResp += `you are trying to do something that sounds strange...
+            </div><br /><br />
+            <form method="post" action="">Paste here your multidimensional array:<br/>
+              e.g.: [[1,2,[3]],4]
+              <input type="text" name="name" />
+              <input type="submit" value="Submit" />
+            </form></body></html>`;
+            response.end(strResp);
 
         }
 
