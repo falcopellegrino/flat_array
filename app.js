@@ -62,6 +62,7 @@ const server = http.createServer(function(request, response) {
         catch(err) {
             console.log('err: ' + err);
             //response.end('you are trying to do something that sounds strange...');
+            var strResp = `<html><body><div>`;
             strResp += `you are trying to do something that sounds strange...
             </div><br /><br />
             <form method="post" action="">Paste here your multidimensional array:<br/>
