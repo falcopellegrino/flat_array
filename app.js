@@ -49,11 +49,7 @@ const server = http.createServer(function(request, response) {
             strResp += "<br />Flatted Array = [" + flattedArray.toString() + "]";
             strResp += `
             </div><br /><br />
-            <form method="post" action="">Paste here your multidimensional array:<br/>
-              e.g.: [[1,2,[3]],4]
-              <input type="text" name="name" />
-              <input type="submit" value="Submit" />
-            </form></body></html>`;
+            ` + getForm() + `</body></html>`;
             // response.end(decode(posted));
 
             response.end(strResp);
@@ -65,11 +61,8 @@ const server = http.createServer(function(request, response) {
             var strResp = `<html><body><div>`;
             strResp += `you are trying to do something that sounds strange...
             </div><br /><br />
-            <form method="post" action="">Paste here your multidimensional array:<br/>
-              e.g.: [[1,2,[3]],4]
-              <input type="text" name="name" />
-              <input type="submit" value="Submit" />
-            </form></body></html>`;
+            ` + getForm() + `
+            </body></html>`;
             response.end(strResp);
 
         }
@@ -80,19 +73,22 @@ const server = http.createServer(function(request, response) {
       console.log('GET')
       //http://localhost:3001
       var html = `
-              <html>
-                  <body>
-                      <form method="post" action="">Paste here your multidimensional array:<br/>
-                        e.g.: [[1,2,[3]],4]
-                        <input type="text" name="name" />
-                        <input type="submit" value="Submit" />
-                      </form>
-                  </body>
-              </html>`
+      <html>
+          <body>` + getForm() + `</body>
+      </html>`;
       response.writeHead(200, {'Content-Type': 'text/html'})
       response.end(html)
     }
   });
+
+function getForm(){
+    return `
+            <form method="post" action="">Paste here your multidimensional array:<br/>
+              e.g.: [[1,2,[3]],4]
+              <input type="text" name="name" />
+              <input type="submit" value="Submit" />
+            </form>`;
+}
 
 function decode (str) {
     if(str && typeof str === 'string') {
